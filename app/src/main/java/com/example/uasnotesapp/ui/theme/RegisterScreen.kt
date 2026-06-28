@@ -28,7 +28,12 @@ fun RegisterScreen(navController: NavController) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Daftar - My Notes App by Azizul", fontSize = 24.sp, fontWeight = FontWeight.Bold, color = Color.Black)
+        // Judul Utama
+        Text(text = "Daftar - My Notes App", fontSize = 28.sp, fontWeight = FontWeight.Bold, color = Color.Black)
+
+        // Identitas Pengembang
+        Text(text = "by Muhammad Azizul (NPM : 231134004)", fontSize = 14.sp, color = Color.Gray)
+
         Spacer(modifier = Modifier.height(32.dp))
 
         OutlinedTextField(
@@ -67,7 +72,7 @@ fun RegisterScreen(navController: NavController) {
                     auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             Toast.makeText(context, "Akun Berhasil Dibuat!", Toast.LENGTH_SHORT).show()
-                            navController.popBackStack() // Kembali ke login
+                            navController.popBackStack()
                         } else {
                             Toast.makeText(context, "Gagal: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                         }

@@ -1,0 +1,19 @@
+# Gradle files
+.gradle/
+build/
+**/build/
+
+# Android Studio files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Local configuration files
+local.properties
+
+# Firebase & Secret Configuration
+app/google-services.json
+
+# Other junk
+.DS_Store
